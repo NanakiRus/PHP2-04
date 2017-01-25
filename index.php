@@ -2,6 +2,12 @@
 
 require __DIR__ . '/autoload.php';
 
-$controller = new \App\Controller\Index();
+$controllerName = $_GET['ctrl'] ?? 'Index';
 
-$controller->action('All');
+$controllerClassName = '\\App\\Controller\\' . $controllerName;
+
+$controller = new $controllerClassName;
+
+$actionName = $_GET['action'] ?? 'All';
+
+$controller->action($actionName);

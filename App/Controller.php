@@ -17,7 +17,7 @@ abstract class Controller
     {
     }
 
-    protected function access(): bool
+    protected function access() :bool
     {
         return true;
     }
@@ -28,6 +28,8 @@ abstract class Controller
         $action = 'action' . $name;
         if (true === $this->access()) {
             $this->$action();
+        } else {
+            die('Доступ закрыт');
         }
     }
 
