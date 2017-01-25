@@ -13,11 +13,6 @@ class Index
 
     protected function beforeAction()
     {
-        if (in_array('admin', explode( '/', $_SERVER['REQUEST_URI']))) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
 
@@ -25,18 +20,14 @@ class Index
     protected function actionAll()
     {
         $this->view->news = Article::findAll();
-        if (true === $this->beforeAction()) {
-            $this->view->view(__DIR__ . '/../../template/admin/template.php');
-        } else {
-            $this->view->view(__DIR__ . '/../../template/template.php');
-        }
+        $this->view->view(__DIR__ . '/../../template/template.php');
 
     }
 
     protected function actionOne()
     {
         $this->view->article = Article::findOneById($_GET['id']);
-        $this->view->view(__DIR__ . '/../../template/admin/article.php');
+        $this->view->view(__DIR__ . '/../../template/article.php');
     }
 
 }

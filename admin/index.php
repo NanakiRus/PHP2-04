@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../autoload.php';
 
-$controllerName = $_GET['ctrl'] ?? 'Index';
+$controllerName = $_GET['ctrl'] ?? 'Admin';
 
 $controllerClassName = '\\App\\Controller\\' . $controllerName;
 
