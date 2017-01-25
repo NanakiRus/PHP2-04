@@ -12,19 +12,15 @@
 <body>
 <div class="container">
     <article>
-            <form method="post" action="/obychenie/Php2-04/saveArticle.php">
-                <!-- Присвоение необходимо, что-бы избежать повторных запросов к БД -->
-                <p><?php if (false !== ($author = $article->author)) {
-                    echo $author->firstname . ' ' . $author->lastname;
-                    } else {
-                        echo 'Автор не указан';
-                    } ?></p>
-                <input type="hidden" name="id" value="<?php echo $article->id; ?>">
-                <p><input type="text" class="form-control" name="title" value="<?php echo $article->title; ?>"></p>
-                <p><textarea name="text" class="form-control" rows="3"><?php echo $article->text; ?></textarea></p>
-                <input value="Сохранить" class="btn btn-default btn-lg" type="submit">
-                <a class="btn btn-default btn-lg" href="/obychenie/Php2-04/deleteArticle.php?id=<?php echo $article->id; ?>">Удалить</a>
-            </form>
+        <!-- Присвоение необходимо, что-бы избежать повторных запросов к БД -->
+        <p><?php if (false !== ($author = $article->author)) {
+                echo $author->firstname . ' ' . $author->lastname;
+            } else {
+                echo 'Автор не указан';
+            } ?></p>
+        <input type="hidden" name="id" value="<?php echo $article->id; ?>">
+        <p><?php echo $article->title; ?></p>
+        <p><?php echo $article->text; ?></p>
     </article>
 </div>
 

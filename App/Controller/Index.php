@@ -19,13 +19,13 @@ class Index
     protected function actionAll()
     {
         $this->view->news = Article::findAll();
-        $this->view->view(__DIR__ . '/../../template/template.php');
+        $this->view->view(__DIR__ . '/../../template/admin/template.php');
     }
 
     protected function actionOne()
     {
         $this->view->article = Article::findOneById($_GET['id']);
-        $this->view->view(__DIR__ . '/../../template/article.php');
+        $this->view->view(__DIR__ . '/../../template/admin/article.php');
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/autoload.php';
+require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['id']) && '' !== $_POST['id']) {
     $article = \App\Models\Article::findOneById((int)$_POST['id']);
@@ -23,5 +23,5 @@ if (isset($_POST['title']) && isset($_POST['text'])) {
     $article->save();
 }
 
-header('Location: /obychenie/Php2-03/index.php');
+header('Location: /obychenie/Php2-04/admin/index.php');
 die;
