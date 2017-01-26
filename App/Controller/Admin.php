@@ -28,6 +28,8 @@ class Admin
             $news = Article::findOneById((int)$_GET['id']);
             $news->delete();
         }
+        header('Location: /obychenie/Php2-04/admin/index.php');
+        die;
     }
 
     protected function actionCU()
@@ -52,6 +54,8 @@ class Admin
             $article->text = $_POST['text'];
             $article->save();
         }
+        header('Location: /obychenie/Php2-04/admin/index.php');
+        die;
     }
 
 

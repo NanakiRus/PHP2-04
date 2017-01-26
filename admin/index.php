@@ -8,6 +8,6 @@ $controllerClassName = '\\App\\Controller\\' . $controllerName;
 
 $controller = new $controllerClassName;
 
-$actionName = $_GET['action'] ?? 'All';
+$actionName = $_GET['act'] ?? 'All';
 
 $controller->action($actionName);
