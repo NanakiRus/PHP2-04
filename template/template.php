@@ -15,7 +15,7 @@
         <?php foreach ($news as $article): ?>
             <ul>
                 <li>
-                    <a href="/obychenie/Php2-04/?act=One&id=<?php echo $article->id; ?>"><?php echo $article->title; ?></a><br/><?php echo $article->text; ?>
+                    <a href="/obychenie/Php2-04/index.php?act=One&id=<?php echo $article->id; ?>"><?php echo $article->title; ?></a><br/><?php echo $article->text; ?>
                 </li>
             </ul>
             <!-- Присвоение необходимо, что-бы избежать повторных запросов к БД -->
